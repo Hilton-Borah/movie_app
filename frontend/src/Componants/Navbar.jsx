@@ -27,10 +27,10 @@ const Navbar = () => {
   }
 
   return (
-    <Box p={"20px"} position={"fixed"} top={"0"} zIndex={"9"}  color={"white"} display={"flex"} justifyContent={'space-between'} alignItems={'center'} w={'100%'} margin={'auto'} pl={"50px"} pr={"50px"} mb={"50px"} bgColor={"black"}>
-      <Box>
+    <Box p={"20px"} position={"fixed"} top={"0"} zIndex={"9"}  color={"white"} display={"flex"} justifyContent={'space-between'} alignItems={'center'} w={'100%'} m={"auto"} pl={"50px"} pr={"50px"} mb={"50px"} bgColor={"black"} borderBottom={'0.5px solid rgb(50, 50, 50)'}>
+
       <Link to={"/"}><Image src='https://user-images.githubusercontent.com/103739534/226175925-29f44128-59d8-4660-8a73-b5069cd5bb18.png' w={"30%"}/>
-      </Link></Box>
+      </Link>
       <Box display={"flex"} justifyContent={"space-between"} w={"40%"} alignItems={'center'}>
         <Text cursor={"pointer"} onClick={handleMovieAll}>Movies</Text>
         <Text cursor={"pointer"} onClick={handleTcv}>Tv shows</Text>

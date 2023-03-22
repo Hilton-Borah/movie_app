@@ -2,7 +2,7 @@ import { Box, Button, Divider, Skeleton, Spinner, Stack } from '@chakra-ui/react
 import React, { useEffect, useState } from 'react'
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import Footer from '../Componants/Footer';
 import MovieCard from '../Componants/MovieCard';
 import SkeletonMoviecard from '../Componants/SkeletonMoviecard';
@@ -25,6 +25,8 @@ const Allmovies = () => {
     useEffect(() => {
         dispatch(getAllData(location.pathname, page))
     }, [page, location])
+
+    console.log(location.pathname)
 
     const handlePageDCS = () => {
         if (page === 0) {
@@ -65,7 +67,8 @@ const Allmovies = () => {
                                             <Skeleton w={"50%"} p={"10px"} />
                                         </Box>
                                     </Stack> :
-                                        <MovieCard key={el.id} id={el.id} title={el.title} poster_path={el.poster_path} release_date={el.release_date} original_language={el.original_language} />
+                                        <Link to={`/${el.title}/details/${el.id}`} state={{ prevPath: location.pathname }}>
+                                            <MovieCard key={el.id} id={el.id} title={el.title} poster_path={el.poster_path} release_date={el.release_date} original_language={el.original_language} /></Link>
                                 }
                             </Box>
                         )
