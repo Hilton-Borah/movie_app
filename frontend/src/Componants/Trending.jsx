@@ -26,7 +26,7 @@ const Trending = ({whichType,path}) => {
         <Box w={"80%"} textAlign={"start"} m={'auto'} fontSize={"30px"} mb={"50px"} color={'white'}>{whichType}</Box>
         <Box w={"80%"} display={"grid"} gridTemplateColumns={"repeat(6,1fr)"} m={"auto"} gap={"10px"}>
             {
-               allMovie.length>0 && allMovie.map((el)=>{
+               allMovie.length>0 && allMovie.splice(8,6).map((el)=>{
                     return (
                         <Box key={el.id}>
                             {
